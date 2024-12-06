@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors({ 
   origin:[
     'https://linkddeployfrontendfrontend-vercel-domain.vercel.app', 
-    'http://localhost:8000'
+    'http://localhost:3000'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
