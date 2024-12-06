@@ -264,7 +264,7 @@ app.post("/image-upload", upload.single("image"), async (req, res) => {
     if(!req.file) {
       return res.status(400).json({error: true, message: "No image uploaded"});
     }
-    const imageUrl = `https://your-backend-vercel-domain.vercel.app/uploads/${req.file.filename}`;
+    const imageUrl = `https://pencit-backend.vercel.app//uploads/${req.file.filename}`;
 
     res.status(201).json({ imageUrl });
   } catch (error) {
