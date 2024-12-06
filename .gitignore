@@ -6,6 +6,9 @@ node_modules/
 *.env
 !.env.example
 
+# Vercel
+.vercel
+
 # Log files
 logs
 *.log

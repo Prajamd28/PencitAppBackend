@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "Express.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/"
+      }
+    ],
+    "env": {
+      "MONGODB_URI": "mongodb+srv://M28:nasipadang@pencit.janzn.mongodb.net/?retryWrites=true&w=majority&appName=Pencit",
+      "ACCESS_TOKEN_SECRET": "6bec1ff0c398bf88f144c5469bc3d96a333588772c48eef7084f3ed3150e64f9e8ac07836b632ed147faef78610edd2d2326ad07064af0b548996cb0586ff12c"
+    }
+  }
