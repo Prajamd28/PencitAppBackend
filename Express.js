@@ -272,6 +272,28 @@ app.post("/image-upload", upload.single("image"), async (req, res) => {
   }
 });
 
+app.get("/get-image/:filename", (req, res) => {
+  const filename = req.params.filename;
+  const filePath = path.join(__dirname, 'uploads', filename);
+
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      // If file not found or error occurs
+      if (err.code === 'ENOENT') {
+        return res.status(404).json({ 
+          error: true, 
+          message: "Image not found" 
+        });
+      }
+      // For other types of errors
+      return res.status(500).json({ 
+        error: true, 
+        message: "Error retrieving image" 
+      });
+    }
+  });
+});
+
 // Health check
 app.get("/health", (req, res) => {
   res.status(200).json({ status: "OK", message: "Server is running" });
